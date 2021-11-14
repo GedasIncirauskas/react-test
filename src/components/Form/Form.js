@@ -39,10 +39,10 @@ const Form = ({ setUserInputs, userInputs, title, type, submit }) => {
 };
 
 Form.propTypes = {
+  setUserInputs: PropTypes.func,
+  userInputs: PropTypes.objectOf(PropTypes.string),
   title: PropTypes.string,
   type: PropTypes.string,
-  setUserInputs: PropTypes.func,
-  userInputs: PropTypes.func,
   submit: PropTypes.func,
 };
 
