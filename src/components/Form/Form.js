@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as S from './Form.styles';
 
 const Form = ({ setUserInputs, userInputs, title, type, submit }) => {
@@ -35,6 +36,14 @@ const Form = ({ setUserInputs, userInputs, title, type, submit }) => {
       <S.ButtonStyle type={type || 'submit'}>{title}</S.ButtonStyle>
     </S.FormContainer>
   );
+};
+
+Form.propTypes = {
+  title: PropTypes.string,
+  type: PropTypes.string,
+  setUserInputs: PropTypes.func,
+  userInputs: PropTypes.func,
+  submit: PropTypes.func,
 };
 
 export default Form;
