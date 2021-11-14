@@ -30,13 +30,7 @@ const Login = () => {
 
   return (
     <div>
-      <Form
-        type="submit"
-        title="Log in"
-        userInputs={userInputs}
-        setUserInputs={setUserInputs}
-        submit={userLogin}
-      />
+      <Form type="submit" title="Log in" userInputs={userInputs} setUserInputs={setUserInputs} submit={userLogin} />
     </div>
   );
 };

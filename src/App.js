@@ -1,16 +1,15 @@
 import React from 'react';
-import { Register, Login, Navigation, Home, Add } from './components/index';
+import { Register, Login, Navigation, Home, Add, PrivateRoute } from './components/index';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import './App.css';
+import * as S from './App.styles';
 
 const App = () => {
   return (
-    <div className="container">
+    <S.MainContainer>
       <Router>
         <Navigation />
         <Routes>
-          {/* <Route
+          <Route
             exact
             path="/"
             element={
@@ -27,13 +26,12 @@ const App = () => {
                 <Add />
               </PrivateRoute>
             }
-          /> */}
+          />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
-          <Route exact path="/" element={<Home />} />
         </Routes>
       </Router>
-    </div>
+    </S.MainContainer>
   );
 };
 

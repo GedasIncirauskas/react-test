@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Form } from '../../';
 
 const Register = () => {
   const [userInputs, setUserInputs] = useState();
+  const navigate = useNavigate();
 
   const userRegister = () => {
     fetch(`${process.env.REACT_APP_BASE_URL}v1/auth/register`, {
@@ -16,10 +18,11 @@ const Register = () => {
       .then((data) => {
         if (data) {
           alert('Succesfully registered');
-          setUserInputs('');
+          return navigate('/login', { replace: true });
         }
+        return alert('Invalid registration');
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => alert(err));
   };
 
   return (
